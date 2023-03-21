@@ -366,11 +366,11 @@ public class BSPatch {
         return newBuf;
     }
 
-    public static void main(String[] args) throws IOException {
-        final File oldFile = new File("D:\\dev\\live_app\\bin\\tilkilive.com_1 2.2.4+5827 2023-03-14 09_56_16.992497.apk");
-        final File newFile = new File("D:\\dev\\live_app\\bin\\aaa.apk");
-        final File diffFile = new File("D:\\dev\\live_app\\bin\\go_apk.diff");
-        patchFast(oldFile, newFile, diffFile, 2);
-    }
+//    public static void main(String[] args) throws IOException {
+//        final File oldFile = new File("D:\\dev\\live_app\\bin\\新建文件夹\\tilkilive.com_1 2.2.4+5827 2023-03-14 09_56_16.992497.apk");
+//        final File newFile = new File("D:\\dev\\live_app\\bin\\新建文件夹\\aaa.apk");
+//        final File diffFile = new File("D:\\dev\\live_app\\bin\\新建文件夹\\go_apk.zip");
+//        patchFast(oldFile, newFile, diffFile, 2);
+//    }
 
 }

@@ -29,8 +29,12 @@
 package com.daemonology.bsdiff;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+
+import static com.daemonology.bsdiff.BSDiff.bsdiff;
+import static com.daemonology.bsdiff.BSPatch.patchFast;
 
 public class BSUtil {
 
@@ -80,5 +84,36 @@ public class BSUtil {
 
         data = null;
         return outStream.toByteArray();
+    }
+
+    public static void main(String[] arg) {
+        if (4 < arg.length) {
+            String exe = arg[1];
+            if ("diff".equals(exe)) {
+                File oldFile = new File(arg[1]);
+                File newFile = new File(arg[2]);
+                File diffFile = new File(arg[3]);
+                try {
+                    bsdiff(oldFile, newFile, diffFile);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return;
+            } else if ("patch".equals(exe)) {
+                File oldFile = new File(arg[1]);
+                File diffFile = new File(arg[2]);
+                File newFile = new File(arg[3]);
+                try {
+                    patchFast(oldFile, newFile, diffFile, 2);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return;
+            }
+        }
+        System.out.println("BsDiff help");
+        System.out.println("\tdiff <old file> <new file> <out diff file>");
+        System.out.println("\tpatch <old file> <diff file> <out file>");
+        System.out.println("");
     }
 }

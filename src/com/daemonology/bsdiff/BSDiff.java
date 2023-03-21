@@ -684,13 +684,13 @@ public class BSDiff {
     //
     //    }
 
-    public static void main(String[] args) throws IOException {
-        final File oldFile = new File("D:\\dev\\live_app\\bin\\tilkilive.com_1 2.2.4+5827 2023-03-14 09_56_16.992497.apk");
-        final File newFile = new File("D:\\dev\\live_app\\bin\\test_tilkilive.com_11 2.2.5+5829 2023-03-17 16_51_25.376989.apk");
-        final File diffFile = new File("D:\\dev\\live_app\\bin\\apk.diff");
-        bsdiff(oldFile, newFile, diffFile);
-        System.out.println("eeeeeeeee");
-    }
+//    public static void main(String[] args) throws IOException {
+//        final File oldFile = new File("D:\\dev\\live_app\\bin\\新建文件夹\\tilkilive.com_1 2.2.4+5827 2023-03-14 09_56_16.992497.apk");
+//        final File newFile = new File("D:\\dev\\live_app\\bin\\新建文件夹\\test_tilkilive.com_11 2.2.5+5829 2023-03-17 16_51_25.376989.apk");
+//        final File diffFile = new File("D:\\dev\\live_app\\bin\\新建文件夹\\apk.diff");
+//        bsdiff(oldFile, newFile, diffFile);
+//        System.out.println("eeeeeeeee");
+//    }
 
     private static class IntByRef {
         private int value;

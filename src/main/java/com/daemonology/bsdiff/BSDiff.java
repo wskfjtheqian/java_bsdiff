@@ -26,7 +26,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-package  com.daemonology.bsdiff;
+package com.daemonology.bsdiff;
 
 import java.io.*;
 import java.util.Stack;

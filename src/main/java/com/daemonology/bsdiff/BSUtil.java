@@ -86,28 +86,22 @@ public class BSUtil {
         return outStream.toByteArray();
     }
 
-    public static void main(String[] arg) {
-        if (4 < arg.length) {
-            String exe = arg[1];
+    public static void main(String[] arg) throws Exception {
+        if (4 <= arg.length) {
+            String exe = arg[0];
             if ("diff".equals(exe)) {
                 File oldFile = new File(arg[1]);
                 File newFile = new File(arg[2]);
                 File diffFile = new File(arg[3]);
-                try {
-                    bsdiff(oldFile, newFile, diffFile);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+
+                bsdiff(oldFile, newFile, diffFile);
                 return;
             } else if ("patch".equals(exe)) {
                 File oldFile = new File(arg[1]);
                 File diffFile = new File(arg[2]);
                 File newFile = new File(arg[3]);
-                try {
-                    patchFast(oldFile, newFile, diffFile, 2);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+
+                patchFast(oldFile, newFile, diffFile, 2);
                 return;
             }
         }
